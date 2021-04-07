@@ -1,0 +1,30 @@
+USE [Banking]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_ShowAllCustomers]    Script Date: 07-04-2021 15:26:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[sp_ShowAllCustomers] 
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT Account_No,Account_Name,Mobile_No,Email,Address,Bank_Branch,IFSC From Registration
+END
+
+GO
+
+
