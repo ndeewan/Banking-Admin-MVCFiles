@@ -1,0 +1,47 @@
+USE [Banking]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[fn_ShowCustomerByAccNo]    Script Date: 07-04-2021 15:28:25 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE FUNCTION [dbo].[fn_ShowCustomerByAccNo]
+	-- Add the parameters for the function here
+(
+@accno bigint
+)
+
+RETURNS 
+@Customer_Details TABLE 
+(
+	-- Add the column definitions for the TABLE variable here
+	Account_Number bigint,
+	Account_Name nvarchar(50),
+	Mobile_No bigint,
+	Email nvarchar(50),
+	Address nvarchar(50),
+	Bank_Branch nvarchar(50),
+	IFSC nchar(10)
+
+)
+AS
+BEGIN
+	-- Fill the table variable with the rows for your result set
+	insert into @Customer_Details
+	select Account_No,Account_Name,Mobile_No,Email,Address,Bank_Branch,IFSC from Registration
+	where Account_No=@accno
+
+	RETURN 
+END
+
+GO
+
+
