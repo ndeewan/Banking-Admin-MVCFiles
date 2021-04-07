@@ -1,0 +1,67 @@
+﻿@model Banking.Models.TransactionModel
+
+@{
+    ViewBag.Title = "ShowCustomerTransaction";
+}
+
+<h2>Transaction Details </h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sender_Acc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sender_Acc)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Receiver_Acc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Receiver_Acc)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Rec_IFSC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rec_IFSC)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Transaction_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transaction_time)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Account_Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Account_Balance)
+        </dd>
+    </dl>
+</div>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@

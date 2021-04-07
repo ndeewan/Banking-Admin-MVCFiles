@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Banking.Models.TransactionModel>
+
+@{
+    ViewBag.Title = "ShowAllCustomerTranscations";
+}
+
+<h2>Transaction Details of All Customers</h2>
+
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Sender_Acc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Receiver_Acc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rec_IFSC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction_time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_Balance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Sender_Acc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Receiver_Acc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rec_IFSC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Amount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Transaction_time)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Account_Balance)
+    </td>
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+        @Html.ActionLink("Details", "ShowCustomerTransaction", new { id = item.Sender_Acc }) 
+        
+        @*|@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+    </td>
+</tr>
+}
+
+</table>

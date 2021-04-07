@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Banking.Models.AdminModel>
+
+@{
+    ViewBag.Title = "ShowAllCustomers";
+}
+
+<h2>ShowAllCustomers</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Account_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Branch)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IFSC)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Account_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Branch)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IFSC)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Account_No },null) |
+            @Html.ActionLink("Details", "CustomerDetails", new {  id= item.Account_No },null) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
